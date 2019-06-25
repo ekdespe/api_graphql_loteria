@@ -8,12 +8,11 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.debug = True
-
 app.add_url_rule(
     '/graphql',
     view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True)
 )
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='192.168.2.106')
 
