@@ -31,7 +31,7 @@ class Resultado_Quina(Document):
     ganhadores_quadra = IntField()
     rateio_quadra = StringField()
     ganhadores_terno = StringField()
-    rateio_terno = IntField()
+    rateio_terno = StringField()
     ganhadores_duque = IntField()
     rateio_duque = StringField()
     acumulado = StringField()
