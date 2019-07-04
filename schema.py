@@ -2,16 +2,15 @@ import graphene
 import datetime
 from graphene.relay import Node
 from graphene_mongo import MongoengineConnectionField, MongoengineObjectType
-from models import Resultado_Quina as Resultado_Model
-from models import Cidades as CidadesModel
+from models.models import Resultado_Quina as Resultado_Model
 
-
-class Cidades(MongoengineObjectType):
+'''
+class Ganhadores_Cidades(MongoengineObjectType):
 
     class Meta:
         model = CidadesModel
         interfaces = (Node,)
-
+'''
 class Resultado_Quina(MongoengineObjectType):
 
     class Meta:

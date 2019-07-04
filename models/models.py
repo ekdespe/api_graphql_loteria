@@ -3,16 +3,11 @@ from datetime import datetime
 from mongoengine import (Document,EmbeddedDocument)
 from mongoengine.fields import (
     DateTimeField,IntField, ReferenceField, StringField,
-    EmbeddedDocumentField,ListField
+    EmbeddedDocumentListField,ListField
 )
 
-class Users(Document):
-    meta = {'collection':'users'}
-    name = StringField()
-    age = IntField()
-
-class Cidades(EmbeddedDocument):
-    cidades = StringField()
+class Ganhadores_Por_Uf(EmbeddedDocument):
+    cidade = StringField()
     uf = StringField()
 
 class Resultado_Quina(Document):
@@ -26,7 +21,7 @@ class Resultado_Quina(Document):
     dezena_5	 =      StringField()	
     arrecadacao_total = StringField()
     ganhadores_quina =  IntField()
-    ganhadores_por_uf = ListField(EmbeddedDocumentField(Cidades))
+    ganhadores_por_uf = EmbeddedDocumentListField(Ganhadores_Por_Uf)
     rateio_quina = StringField()
     ganhadores_quadra = IntField()
     rateio_quadra = StringField()
